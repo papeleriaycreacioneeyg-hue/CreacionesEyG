@@ -1,0 +1,14 @@
+# Auto-normalize line endings
+* text=auto eol=lf
+
+# Explicitly mark batch/cmd files to retain Windows line endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Denote binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
