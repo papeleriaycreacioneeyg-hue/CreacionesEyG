@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffcf9; /* Cream White */
-  --foreground: #2d2621; /* Charcoal Brown */
+  --background: #fdfaf6; /* Warm Cream */
+  --foreground: #2d1a3c; /* Deep Charcoal Plum */
 
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-poppins);
 
-  /* Brand Palette */
-  --primary-pink: #fbc6c6;
-  --soft-lavender: #e2d4f0;
-  --pastel-purple: #c6b4e6;
-  --warm-gold: #e5c386;
-  --cream-white: #fffcf9;
-  --soft-peach: #fce2db;
+  /* Precise Brand Colors */
+  --primary-rose: #e04b88; /* Rose Pink */
+  --deep-plum: #4a154b; /* Plum Heading */
+  --soft-lavender: #f1ebfc; /* Lavender Cards */
+  --warm-gold: #e5c386; /* Accent Gold */
+  --cream-white: #fdfaf6;
+  --soft-peach: #fdf1ed;
   --mint-accent: #d1ebd8;
 }
 
@@ -21,20 +21,21 @@
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
 
-  --color-primary: #fbc6c6;
-  --color-primary-foreground: #2d2621;
-  --color-secondary: #e2d4f0;
-  --color-secondary-foreground: #2d2621;
+  --color-primary: #e04b88;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f1ebfc;
+  --color-secondary-foreground: #4a154b;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted: #fce2db;
+  --color-muted: #fdf1ed;
   --color-muted-foreground: #605149;
   --color-accent: #e5c386;
+  --color-plum: #4a154b;
   --color-mint: #d1ebd8;
 
   --color-card: #ffffff;
-  --color-card-foreground: #2d2621;
+  --color-card-foreground: #4a154b;
 }
 
 body {
@@ -50,4 +51,5 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif), serif;
+  color: var(--deep-plum);
 }
