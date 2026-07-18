@@ -3,7 +3,9 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { CategoriesSection } from "@/components/home/CategoriesSection";
 import { ValueSection } from "@/components/home/ValueSection";
+import { ProductsSection } from "@/components/home/ProductsSection";
 import { GallerySection } from "@/components/home/GallerySection";
+import { AboutSection } from "@/components/home/AboutSection";
 import { CTASection } from "@/components/home/CTASection";
 
 export default function Home() {
@@ -12,19 +14,25 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Section Banner */}
+        {/* Spectacular Hero Banner */}
         <HeroSection />
 
-        {/* Categories Carousel / Showcase Grid */}
+        {/* 5-Column Categories Section */}
         <CategoriesSection />
 
         {/* Brand Pillars & Trust Badges */}
         <ValueSection />
 
-        {/* Finished Orders Gallery */}
+        {/* 5-Column Featured Products Section */}
+        <ProductsSection />
+
+        {/* Showcase Gallery Row */}
         <GallerySection />
 
-        {/* Bottom Deferral CTA */}
+        {/* Story & Value Checklist Section */}
+        <AboutSection />
+
+        {/* Bottom Conversion Band */}
         <CTASection />
       </main>
 
