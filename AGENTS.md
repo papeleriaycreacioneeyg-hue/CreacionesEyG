@@ -10,6 +10,9 @@ Este archivo establece las instrucciones permanentes para Antigravity en este es
 * **Rama de Producción:** `main`
 * **Despliegue Automático:** Vercel (`https://vercel.com/papeleriay-creaciones-ey-g/creaciones-ey-g`)
 * **Binario Git Local:** `c:\CreacionesEyG\git\cmd\git.exe`
+* **Gestor de Credenciales Configurado:** `wincred` (utiliza las credenciales guardadas en Windows Credential Manager).
+* **Inyección de PATH en comandos:** Todos los comandos de Git deben ejecutarse asegurando la ruta de Git Portable:
+  `$env:PATH = "c:\CreacionesEyG\git\cmd;" + $env:PATH; & "c:\CreacionesEyG\git\cmd\git.exe" <comando>`
 
 ---
 
@@ -28,9 +31,10 @@ Al finalizar la implementación de cualquier tarea o corrección solicitada por 
    * Hacer `git add` únicamente de los archivos relevantes para la tarea.
    * Crear un commit estructurado con mensaje descriptivo (e.g. `feat: ...`, `fix: ...`).
 5. **Sincronización con GitHub:**
-   * Ejecutar `git push origin main`.
+   * Ejecutar `git push origin main` con la configuración de `wincred`.
+   * **Comprobación Real:** Confirmar que el comando finalizó con código de salida 0 y que `git status` muestra `Your branch is up to date with 'origin/main'`. No confundir un comando en segundo plano o pendiente con una sincronización completada.
 6. **Reporte:**
-   * Informar al usuario el hash del commit, confirmación del push a GitHub y la activación del despliegue automático en Vercel.
+   * Informar al usuario el hash del commit, la confirmación de la sincronización en GitHub y la activación del despliegue automático en Vercel.
 
 ---
 
@@ -41,4 +45,4 @@ Al finalizar la implementación de cualquier tarea o corrección solicitada por 
 * **NUNCA** descartar cambios locales ni trabajo pendiente del usuario.
 * **NUNCA** utilizar `git add .` de forma indiscriminada si existen archivos sin seguimiento no relacionados.
 * **NUNCA** realizar commits o pushes si la compilación (`npm run build`) o la validación de tipos falla.
-* En caso de conflicto de Git o requerimiento de inicio de sesión, detenerse e informar al usuario.
+* En caso de conflicto de Git o requerimiento de intervención, detenerse e informar al usuario.
