@@ -81,18 +81,18 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        {/* Left Column (45%) */}
+        {/* Left Column (50% on desktop) */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={textVariants}
-          className="lg:col-span-5 space-y-8 text-left"
+          className="lg:col-span-6 space-y-8 text-left"
         >
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-plum leading-tight">
               Papelería y<span className="block text-plum">Creaciones E&G</span>
             </h1>
-            <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
               Creamos detalles únicos para momentos especiales.
             </p>
           </div>
@@ -159,24 +159,25 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column (55%) - Integrated Banner */}
+        {/* Right Column (50% on desktop) - Integrated Banner beside main title */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={bannerVariants}
-          className="lg:col-span-7 relative flex justify-center items-center h-[350px] md:h-[480px] w-full"
+          className="lg:col-span-6 relative flex justify-center items-center w-full"
         >
-          {/* Transparent Gradient Overlay Mask for smooth integration */}
-          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#fdfaf6] via-transparent to-transparent opacity-90 lg:block hidden" />
+          {/* Subtle ambient pastel glow behind the banner for organic blending */}
+          <div className="absolute -inset-3 bg-gradient-to-tr from-rose-200/50 via-purple-200/40 to-amber-100/40 rounded-3xl blur-2xl opacity-75 pointer-events-none" />
 
-          <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-lg border bg-background">
+          <div className="relative w-full max-w-[550px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl shadow-rose-950/5 border border-rose-100/80 bg-background/80 backdrop-blur-xs transition-all duration-300 hover:shadow-2xl hover:shadow-purple-900/10">
             <Image
-              src="/baner.png"
-              alt="Colección Papelería Creaciones E&G"
-              fill
-              className="object-cover"
-              sizes="(max-w-1024px) 100vw, 700px"
+              src="/images/banner.png"
+              alt="Papelería y Creaciones E&G - Ideas que inspiran"
+              width={553}
+              height={372}
               priority
+              className="w-full h-auto object-cover block rounded-2xl md:rounded-3xl"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 550px"
             />
           </div>
         </motion.div>
