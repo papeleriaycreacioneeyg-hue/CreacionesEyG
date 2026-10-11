@@ -1,0 +1,870 @@
+﻿[
+  {
+    "index": 1,
+    "collection_name": "Agenda Devocional",
+    "folder_name": "Agenda Devocinal",
+    "slug": "agenda-devocional",
+    "category": "regalos-especiales",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_2888.HEIC",
+        "size_kb": 3221.3,
+        "target_webp": "agenda-devocional-primary.webp",
+        "target_path": "public/images/products/regalos-especiales/agenda-devocional-primary.webp",
+        "notes": "Toma frontal centrada, encuadernación artesanal (3.2 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_2894.HEIC",
+        "size_kb": 3124.7,
+        "target_webp": "agenda-devocional-secondary-1.webp",
+        "target_path": "public/images/products/regalos-especiales/agenda-devocional-secondary-1.webp",
+        "notes": "Detalle de hojas interiores y cinta separadora (3.1 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_2886.HEIC",
+        "size_kb": 2704.4,
+        "target_webp": "agenda-devocional-secondary-2.webp",
+        "target_path": "public/images/products/regalos-especiales/agenda-devocional-secondary-2.webp",
+        "notes": "Composición con accesorios y lapicero (2.7 MB)"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "collection_name": "Arreglos de Cursos Estudiantiles",
+    "folder_name": "Arreglos de Cursos Estudiantiles",
+    "slug": "arreglos-cursos-estudiantiles",
+    "category": "bodas-recuerdos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_3193.HEIC",
+        "size_kb": 3298.5,
+        "target_webp": "arreglos-cursos-estudiantiles-primary.webp",
+        "target_path": "public/images/products/bodas-recuerdos/arreglos-cursos-estudiantiles-primary.webp",
+        "notes": "Encuadre general nítido de arreglo escolar de graduación (3.3 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_3192.HEIC",
+        "size_kb": 3262.3,
+        "target_webp": "arreglos-cursos-estudiantiles-secondary-1.webp",
+        "target_path": "public/images/products/bodas-recuerdos/arreglos-cursos-estudiantiles-secondary-1.webp",
+        "notes": "Detalle de cintas personalizadas con nombre del curso (3.3 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_2136.HEIC",
+        "size_kb": 2263.3,
+        "target_webp": "arreglos-cursos-estudiantiles-secondary-2.webp",
+        "target_path": "public/images/products/bodas-recuerdos/arreglos-cursos-estudiantiles-secondary-2.webp",
+        "notes": "Vista angular con dulces y detalles festivos (2.3 MB)"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "collection_name": "Arreglos del Día del Padre",
+    "folder_name": "Arreglos del Dia del Padre",
+    "slug": "arreglos-dia-del-padre",
+    "category": "regalos-especiales",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_2218.HEIC",
+        "size_kb": 3122.9,
+        "target_webp": "arreglos-dia-del-padre-primary.webp",
+        "target_path": "public/images/products/regalos-especiales/arreglos-dia-del-padre-primary.webp",
+        "notes": "Arreglo temÃ¡tico Padre con golosinas y cerveza artesanal (3.1 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_2220.HEIC",
+        "size_kb": 3027.1,
+        "target_webp": "arreglos-dia-del-padre-secondary-1.webp",
+        "target_path": "public/images/products/regalos-especiales/arreglos-dia-del-padre-secondary-1.webp",
+        "notes": "Perspectiva lateral con globo personalizado (3.0 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_1840.HEIC",
+        "size_kb": 2583.8,
+        "target_webp": "arreglos-dia-del-padre-secondary-2.webp",
+        "target_path": "public/images/products/regalos-especiales/arreglos-dia-del-padre-secondary-2.webp",
+        "notes": "Composición de regalo completa en caja de madera (2.6 MB)"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "collection_name": "Avisos Publicitarios Personalizados",
+    "folder_name": "Avisos Personalizados",
+    "slug": "avisos-personalizados",
+    "category": "corporativo-emprendedores",
+    "images_count": 2,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_4152.HEIC",
+        "size_kb": 2162.4,
+        "target_webp": "avisos-personalizados-primary.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/avisos-personalizados-primary.webp",
+        "notes": "Vista frontal de letrero publicitario acrÃ­lico para locales (2.2 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_4154.HEIC",
+        "size_kb": 1907.1,
+        "target_webp": "avisos-personalizados-secondary-1.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/avisos-personalizados-secondary-1.webp",
+        "notes": "Detalle de acabado brillante y anclajes (1.9 MB)"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "collection_name": "Caja de Desayuno Día del Carabinero",
+    "folder_name": "Caja de Desayuno Día del Carabinero",
+    "slug": "caja-desayuno-dia-del-carabinero",
+    "category": "regalos-especiales",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_0722.HEIC",
+        "size_kb": 2797.8,
+        "target_webp": "caja-desayuno-dia-del-carabinero-primary.webp",
+        "target_path": "public/images/products/regalos-especiales/caja-desayuno-dia-del-carabinero-primary.webp",
+        "notes": "Vista panorámica con papelerÃ­a verde institucional (2.8 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_0721.HEIC",
+        "size_kb": 2475.5,
+        "target_webp": "caja-desayuno-dia-del-carabinero-secondary-1.webp",
+        "target_path": "public/images/products/regalos-especiales/caja-desayuno-dia-del-carabinero-secondary-1.webp",
+        "notes": "Detalle de tazÃ³n personalizado y jugo (2.5 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_0724.HEIC",
+        "size_kb": 1926.5,
+        "target_webp": "caja-desayuno-dia-del-carabinero-secondary-2.webp",
+        "target_path": "public/images/products/regalos-especiales/caja-desayuno-dia-del-carabinero-secondary-2.webp",
+        "notes": "Encuadre cerrado con tapa de caja decorada (1.9 MB)"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "collection_name": "Caja Sorpresa para Hombres",
+    "folder_name": "Caja Sorpresa de Hombres",
+    "slug": "caja-sorpresa-hombres",
+    "category": "cajas-desayunos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_8401.HEIC",
+        "size_kb": 3594.8,
+        "target_webp": "caja-sorpresa-hombres-primary.webp",
+        "target_path": "public/images/products/cajas-desayunos/caja-sorpresa-hombres-primary.webp",
+        "notes": "Caja explosiva abierta con globos y regalos masculinos (3.6 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_8397.HEIC",
+        "size_kb": 3572.8,
+        "target_webp": "caja-sorpresa-hombres-secondary-1.webp",
+        "target_path": "public/images/products/cajas-desayunos/caja-sorpresa-hombres-secondary-1.webp",
+        "notes": "Ãngulo en perspectiva de compartimentos y golosinas (3.6 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_9084.HEIC",
+        "size_kb": 2911.7,
+        "target_webp": "caja-sorpresa-hombres-secondary-2.webp",
+        "target_path": "public/images/products/cajas-desayunos/caja-sorpresa-hombres-secondary-2.webp",
+        "notes": "Presentación frontal con dedicatoria troquelada (2.9 MB)"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "collection_name": "Caja Sorpresa para Mujeres",
+    "folder_name": "Caja Sorpresa de Mujeres",
+    "slug": "caja-sorpresa-mujeres",
+    "category": "cajas-desayunos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_3609.HEIC",
+        "size_kb": 3220.2,
+        "target_webp": "caja-sorpresa-mujeres-primary.webp",
+        "target_path": "public/images/products/cajas-desayunos/caja-sorpresa-mujeres-primary.webp",
+        "notes": "Caja decorada en tonos rosas con rosas y chocolates (3.2 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_3438.HEIC",
+        "size_kb": 3214.6,
+        "target_webp": "caja-sorpresa-mujeres-secondary-1.webp",
+        "target_path": "public/images/products/cajas-desayunos/caja-sorpresa-mujeres-secondary-1.webp",
+        "notes": "Toma cenital con disposiciÃ³n de regalos y lazos (3.2 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_3434.HEIC",
+        "size_kb": 3022.6,
+        "target_webp": "caja-sorpresa-mujeres-secondary-2.webp",
+        "target_path": "public/images/products/cajas-desayunos/caja-sorpresa-mujeres-secondary-2.webp",
+        "notes": "Ãngulo frontal mostrando diseÃ±o de tapa personalizada (3.0 MB)"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "collection_name": "Calendarios de Escritorio e Imantados",
+    "folder_name": "Calendarios de Escritorio y Imantados",
+    "slug": "calendarios-escritorio-imantados",
+    "category": "corporativo-emprendedores",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_2811.HEIC",
+        "size_kb": 3194.5,
+        "target_webp": "calendarios-escritorio-imantados-primary.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/calendarios-escritorio-imantados-primary.webp",
+        "notes": "Calendario de escritorio de sobremesa anillado (3.2 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_2763.HEIC",
+        "size_kb": 3165.5,
+        "target_webp": "calendarios-escritorio-imantados-secondary-1.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/calendarios-escritorio-imantados-secondary-1.webp",
+        "notes": "Detalle de hojas y diseÃ±o mensual personalizado (3.2 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_4237.HEIC",
+        "size_kb": 2976.1,
+        "target_webp": "calendarios-escritorio-imantados-secondary-2.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/calendarios-escritorio-imantados-secondary-2.webp",
+        "notes": "Modelos imantados para refrigerador (3.0 MB)"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "collection_name": "Cotillones Personalizados",
+    "folder_name": "Cotillones Personalizados",
+    "slug": "cotillones-personalizados",
+    "category": "fiestas-eventos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_0544.HEIC",
+        "size_kb": 4376,
+        "target_webp": "cotillones-personalizados-primary.webp",
+        "target_path": "public/images/products/fiestas-eventos/cotillones-personalizados-primary.webp",
+        "notes": "Set completo de antifaces y gorros festivos temáticos (4.4 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_8095.HEIC",
+        "size_kb": 4340.3,
+        "target_webp": "cotillones-personalizados-secondary-1.webp",
+        "target_path": "public/images/products/fiestas-eventos/cotillones-personalizados-secondary-1.webp",
+        "notes": "Detalle de cortes troquelados brillantes y vinilo (4.3 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_0545.HEIC",
+        "size_kb": 4096.6,
+        "target_webp": "cotillones-personalizados-secondary-2.webp",
+        "target_path": "public/images/products/fiestas-eventos/cotillones-personalizados-secondary-2.webp",
+        "notes": "Muestra de temática de celebraciÃ³n completa (4.1 MB)"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "collection_name": "Cuadros Personalizados Día de la Madre",
+    "folder_name": "Cuadros Perzonalizados Día de la Madre",
+    "slug": "cuadros-dia-de-la-madre",
+    "category": "regalos-especiales",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_0498.HEIC",
+        "size_kb": 3138.9,
+        "target_webp": "cuadros-dia-de-la-madre-primary.webp",
+        "target_path": "public/images/products/regalos-especiales/cuadros-dia-de-la-madre-primary.webp",
+        "notes": "Cuadro enmarcado con collage y mensaje a mamÃ¡ (3.1 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_0497.HEIC",
+        "size_kb": 3079.5,
+        "target_webp": "cuadros-dia-de-la-madre-secondary-1.webp",
+        "target_path": "public/images/products/regalos-especiales/cuadros-dia-de-la-madre-secondary-1.webp",
+        "notes": "Perspectiva resaltando moldura y profundidad (3.1 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_0777.HEIC",
+        "size_kb": 2988.5,
+        "target_webp": "cuadros-dia-de-la-madre-secondary-2.webp",
+        "target_path": "public/images/products/regalos-especiales/cuadros-dia-de-la-madre-secondary-2.webp",
+        "notes": "Variante con diseÃ±o floral y tipografÃ­a elegante (3.0 MB)"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "collection_name": "Desayunos Sorpresa",
+    "folder_name": "Desayuno Sorpresa",
+    "slug": "desayuno-sorpresa",
+    "category": "cajas-desayunos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_4936.HEIC",
+        "size_kb": 2957.5,
+        "target_webp": "desayuno-sorpresa-primary.webp",
+        "target_path": "public/images/products/cajas-desayunos/desayuno-sorpresa-primary.webp",
+        "notes": "Bandeja gourmet completa con tazÃ³n, jugo y globos (3.0 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_4937.HEIC",
+        "size_kb": 2803.5,
+        "target_webp": "desayuno-sorpresa-secondary-1.webp",
+        "target_path": "public/images/products/cajas-desayunos/desayuno-sorpresa-secondary-1.webp",
+        "notes": "Perspectiva lateral de productos y cubiertos (2.8 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_4943.HEIC",
+        "size_kb": 2797.8,
+        "target_webp": "desayuno-sorpresa-secondary-2.webp",
+        "target_path": "public/images/products/cajas-desayunos/desayuno-sorpresa-secondary-2.webp",
+        "notes": "Detalle de papelerÃ­a adhesiva en envases (2.8 MB)"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "collection_name": "Etiquetas Escolares Personalizadas",
+    "folder_name": "Etiquetas Escolares Personalizadas",
+    "slug": "etiquetas-escolares-personalizadas",
+    "category": "papeleria-escolar",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_9042.HEIC",
+        "size_kb": 3985.9,
+        "target_webp": "etiquetas-escolares-personalizadas-primary.webp",
+        "target_path": "public/images/products/papeleria-escolar/etiquetas-escolares-personalizadas-primary.webp",
+        "notes": "Plancha completa de stickers vinílicos troquelados (4.0 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_9043.HEIC",
+        "size_kb": 3747.4,
+        "target_webp": "etiquetas-escolares-personalizadas-secondary-1.webp",
+        "target_path": "public/images/products/papeleria-escolar/etiquetas-escolares-personalizadas-secondary-1.webp",
+        "notes": "Etiquetas rotuladas aplicadas en Ãºtiles escolares (3.7 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_8998.HEIC",
+        "size_kb": 3104.6,
+        "target_webp": "etiquetas-escolares-personalizadas-secondary-2.webp",
+        "target_path": "public/images/products/papeleria-escolar/etiquetas-escolares-personalizadas-secondary-2.webp",
+        "notes": "Muestra de tamaños para lÃ¡pices, libros y botellas (3.1 MB)"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "collection_name": "Etiquetas para Botellas de 15 Años",
+    "folder_name": "Etiquetas para Botellas de 15 Años Personalizadas",
+    "slug": "etiquetas-botellas-15-anos",
+    "category": "bodas-recuerdos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_0520.HEIC",
+        "size_kb": 3993.9,
+        "target_webp": "etiquetas-botellas-15-anos-primary.webp",
+        "target_path": "public/images/products/bodas-recuerdos/etiquetas-botellas-15-anos-primary.webp",
+        "notes": "Botella decorada con etiqueta laminada para 15 años (4.0 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_0523.HEIC",
+        "size_kb": 3989.8,
+        "target_webp": "etiquetas-botellas-15-anos-secondary-1.webp",
+        "target_path": "public/images/products/bodas-recuerdos/etiquetas-botellas-15-anos-secondary-1.webp",
+        "notes": "Detalle de impresión y acabado dorado brillante (4.0 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_0525.HEIC",
+        "size_kb": 3950.6,
+        "target_webp": "etiquetas-botellas-15-anos-secondary-2.webp",
+        "target_path": "public/images/products/bodas-recuerdos/etiquetas-botellas-15-anos-secondary-2.webp",
+        "notes": "Composición con botella y copa en fiesta (4.0 MB)"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "collection_name": "Horarios Escolares Personalizados",
+    "folder_name": "Horario Escolar Personalizado",
+    "slug": "horario-escolar-personalizado",
+    "category": "papeleria-escolar",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_9194.HEIC",
+        "size_kb": 3913.2,
+        "target_webp": "horario-escolar-personalizado-primary.webp",
+        "target_path": "public/images/products/papeleria-escolar/horario-escolar-personalizado-primary.webp",
+        "notes": "Horario escolar plastificado con tabla semanal (3.9 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_9196.HEIC",
+        "size_kb": 3762.4,
+        "target_webp": "horario-escolar-personalizado-secondary-1.webp",
+        "target_path": "public/images/products/papeleria-escolar/horario-escolar-personalizado-secondary-1.webp",
+        "notes": "Detalle de acabado termolaminado resistente (3.8 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_9192.HEIC",
+        "size_kb": 3380.7,
+        "target_webp": "horario-escolar-personalizado-secondary-2.webp",
+        "target_path": "public/images/products/papeleria-escolar/horario-escolar-personalizado-secondary-2.webp",
+        "notes": "DiseÃ±o alternativo temÃ¡tico con personajes (3.4 MB)"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "collection_name": "Kits de Cumpleaños Personalizados",
+    "folder_name": "Kits de Cumpleaños Personalizado",
+    "slug": "kits-cumpleanos-personalizado",
+    "category": "fiestas-eventos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_0366.HEIC",
+        "size_kb": 3155.2,
+        "target_webp": "kits-cumpleanos-personalizado-primary.webp",
+        "target_path": "public/images/products/fiestas-eventos/kits-cumpleanos-personalizado-primary.webp",
+        "notes": "Mesa decorada con cajas temáticas, banderÃ­n y conos (3.2 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_0376.HEIC",
+        "size_kb": 3058.3,
+        "target_webp": "kits-cumpleanos-personalizado-secondary-1.webp",
+        "target_path": "public/images/products/fiestas-eventos/kits-cumpleanos-personalizado-secondary-1.webp",
+        "notes": "Detalle de cajitas milk con apliques en relieve (3.1 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_0370.HEIC",
+        "size_kb": 3041.8,
+        "target_webp": "kits-cumpleanos-personalizado-secondary-2.webp",
+        "target_path": "public/images/products/fiestas-eventos/kits-cumpleanos-personalizado-secondary-2.webp",
+        "notes": "Set completo de papelerÃ­a para fiesta infantil (3.0 MB)"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "collection_name": "PapelerÃ­a y Kits para Bodas",
+    "folder_name": "Kits para Bodas Personalizados",
+    "slug": "kits-bodas-personalizados",
+    "category": "bodas-recuerdos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_2404.HEIC",
+        "size_kb": 3404.8,
+        "target_webp": "kits-bodas-personalizados-primary.webp",
+        "target_path": "public/images/products/bodas-recuerdos/kits-bodas-personalizados-primary.webp",
+        "notes": "InvitaciÃ³n nupcial con sobre calado y cinta satinada (3.4 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_2403.HEIC",
+        "size_kb": 3359.8,
+        "target_webp": "kits-bodas-personalizados-secondary-1.webp",
+        "target_path": "public/images/products/bodas-recuerdos/kits-bodas-personalizados-secondary-1.webp",
+        "notes": "Conjunto de tarjeta de agradecimiento y nÃºmeros de mesa (3.4 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_2778.HEIC",
+        "size_kb": 3233.4,
+        "target_webp": "kits-bodas-personalizados-secondary-2.webp",
+        "target_path": "public/images/products/bodas-recuerdos/kits-bodas-personalizados-secondary-2.webp",
+        "notes": "Caja especial para padrinos de matrimonio (3.2 MB)"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "collection_name": "Libros de Sumas DidÃ¡cticos",
+    "folder_name": "Libro de Sumas Personalizado",
+    "slug": "libro-de-sumas-personalizado",
+    "category": "papeleria-escolar",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_2724.HEIC",
+        "size_kb": 2544.9,
+        "target_webp": "libro-de-sumas-personalizado-primary.webp",
+        "target_path": "public/images/products/papeleria-escolar/libro-de-sumas-personalizado-primary.webp",
+        "notes": "Libro abierto con ejercicios de sumas borrables (2.5 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_2722.HEIC",
+        "size_kb": 2353.3,
+        "target_webp": "libro-de-sumas-personalizado-secondary-1.webp",
+        "target_path": "public/images/products/papeleria-escolar/libro-de-sumas-personalizado-secondary-1.webp",
+        "notes": "Portada plastificada anillada con nombre de alumno (2.4 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_2726.HEIC",
+        "size_kb": 2321.7,
+        "target_webp": "libro-de-sumas-personalizado-secondary-2.webp",
+        "target_path": "public/images/products/papeleria-escolar/libro-de-sumas-personalizado-secondary-2.webp",
+        "notes": "PÃ¡ginas interiores con ilustraciones didÃ¡cticas (2.3 MB)"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "collection_name": "Lienzo de Revelación de GÃ©nero",
+    "folder_name": "Lienzo de Revelación de Genero",
+    "slug": "lienzo-revelacion-de-genero",
+    "category": "fiestas-eventos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_4128.HEIC",
+        "size_kb": 2955.2,
+        "target_webp": "lienzo-revelacion-de-genero-primary.webp",
+        "target_path": "public/images/products/fiestas-eventos/lienzo-revelacion-de-genero-primary.webp",
+        "notes": "Lienzo impreso para votación Boy or Girl (3.0 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_4127.HEIC",
+        "size_kb": 2882,
+        "target_webp": "lienzo-revelacion-de-genero-secondary-1.webp",
+        "target_path": "public/images/products/fiestas-eventos/lienzo-revelacion-de-genero-secondary-1.webp",
+        "notes": "Encuadre frontal completo para backdrop fotogrÃ¡fico (2.9 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_4126.HEIC",
+        "size_kb": 2848.7,
+        "target_webp": "lienzo-revelacion-de-genero-secondary-2.webp",
+        "target_path": "public/images/products/fiestas-eventos/lienzo-revelacion-de-genero-secondary-2.webp",
+        "notes": "Detalle de tela vinílica con ojales de soporte (2.8 MB)"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "collection_name": "Llaveros de Recuerdo Personalizados",
+    "folder_name": "Llaveros",
+    "slug": "llaveros-personalizados",
+    "category": "bodas-recuerdos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_3643.HEIC",
+        "size_kb": 3744.3,
+        "target_webp": "llaveros-personalizados-primary.webp",
+        "target_path": "public/images/products/bodas-recuerdos/llaveros-personalizados-primary.webp",
+        "notes": "ColecciÃ³n de llaveros acrÃ­licos con fotos y borlas (3.7 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_3640.HEIC",
+        "size_kb": 3455.8,
+        "target_webp": "llaveros-personalizados-secondary-1.webp",
+        "target_path": "public/images/products/bodas-recuerdos/llaveros-personalizados-secondary-1.webp",
+        "notes": "Primer plano de llavero con inicial y herrajes metÃ¡licos (3.5 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_3637.HEIC",
+        "size_kb": 3414.7,
+        "target_webp": "llaveros-personalizados-secondary-2.webp",
+        "target_path": "public/images/products/bodas-recuerdos/llaveros-personalizados-secondary-2.webp",
+        "notes": "Variedad de formatos circulares y rectangulares (3.4 MB)"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "collection_name": "Merchandising y PapelerÃ­a Corporativa",
+    "folder_name": "Material Corporativo Personalizado",
+    "slug": "material-corporativo-personalizado",
+    "category": "corporativo-emprendedores",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_4195.HEIC",
+        "size_kb": 3314.4,
+        "target_webp": "material-corporativo-personalizado-primary.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/material-corporativo-personalizado-primary.webp",
+        "notes": "Set corporativo: carpetas, hojas con membrete y credenciales (3.3 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_1266.HEIC",
+        "size_kb": 3320.7,
+        "target_webp": "material-corporativo-personalizado-secondary-1.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/material-corporativo-personalizado-secondary-1.webp",
+        "notes": "Tarjetas de presentaciÃ³n con acabado mate y laca brillante (3.3 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_4192.HEIC",
+        "size_kb": 3011.4,
+        "target_webp": "material-corporativo-personalizado-secondary-2.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/material-corporativo-personalizado-secondary-2.webp",
+        "notes": "Muestra de packaging corporativo y bolsas impresas (3.0 MB)"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "collection_name": "Mini Cajitas de Pascua de Resurrección",
+    "folder_name": "Mini Cajitas de Pascua",
+    "slug": "mini-cajitas-de-pascua",
+    "category": "cajas-desayunos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_9474.HEIC",
+        "size_kb": 3259.6,
+        "target_webp": "mini-cajitas-de-pascua-primary.webp",
+        "target_path": "public/images/products/cajas-desayunos/mini-cajitas-de-pascua-primary.webp",
+        "notes": "Cajas troqueladas con forma de conejito para huevitos (3.3 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_9473.HEIC",
+        "size_kb": 3242.3,
+        "target_webp": "mini-cajitas-de-pascua-secondary-1.webp",
+        "target_path": "public/images/products/cajas-desayunos/mini-cajitas-de-pascua-secondary-1.webp",
+        "notes": "Grupo de cajitas en colores pasteles (3.2 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_9470.HEIC",
+        "size_kb": 3116.4,
+        "target_webp": "mini-cajitas-de-pascua-secondary-2.webp",
+        "target_path": "public/images/products/cajas-desayunos/mini-cajitas-de-pascua-secondary-2.webp",
+        "notes": "Detalle de visores transparentes y cinta decorativa (3.1 MB)"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "collection_name": "Pizarras DidÃ¡cticas de Suma y Resta",
+    "folder_name": "Pizarra de Suma y Resta",
+    "slug": "pizarra-suma-y-resta",
+    "category": "papeleria-escolar",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_9690.HEIC",
+        "size_kb": 2569.3,
+        "target_webp": "pizarra-suma-y-resta-primary.webp",
+        "target_path": "public/images/products/papeleria-escolar/pizarra-suma-y-resta-primary.webp",
+        "notes": "Pizarra blanca plastificada con operaciones matemáticas (2.6 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_9688.HEIC",
+        "size_kb": 2520.7,
+        "target_webp": "pizarra-suma-y-resta-secondary-1.webp",
+        "target_path": "public/images/products/papeleria-escolar/pizarra-suma-y-resta-secondary-1.webp",
+        "notes": "Encuadre con plumÃ³n borrable y figuras magnÃ©ticas (2.5 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_9689.HEIC",
+        "size_kb": 2468.2,
+        "target_webp": "pizarra-suma-y-resta-secondary-2.webp",
+        "target_path": "public/images/products/papeleria-escolar/pizarra-suma-y-resta-secondary-2.webp",
+        "notes": "Demostración de uso y borrado limpio (2.5 MB)"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "collection_name": "Pulseras Fluorescentes para Fiestas",
+    "folder_name": "Pulceras Fuorescentes Para Cumpleaños y Eventos",
+    "slug": "pulseras-fluorescentes-eventos",
+    "category": "fiestas-eventos",
+    "images_count": 2,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_2051.HEIC",
+        "size_kb": 2876.8,
+        "target_webp": "pulseras-fluorescentes-eventos-primary.webp",
+        "target_path": "public/images/products/fiestas-eventos/pulseras-fluorescentes-eventos-primary.webp",
+        "notes": "Pulseras de neÃ³n activadas con brillo en oscuridad (2.9 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_2052.HEIC",
+        "size_kb": 2785.4,
+        "target_webp": "pulseras-fluorescentes-eventos-secondary-1.webp",
+        "target_path": "public/images/products/fiestas-eventos/pulseras-fluorescentes-eventos-secondary-1.webp",
+        "notes": "Presentación de pack para eventos flÃºor (2.8 MB)"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "collection_name": "Tablas de Multiplicar de Bolsillo",
+    "folder_name": "Tablas de Multiplicar",
+    "slug": "tablas-de-multiplicar",
+    "category": "papeleria-escolar",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_9556.HEIC",
+        "size_kb": 3627.2,
+        "target_webp": "tablas-de-multiplicar-primary.webp",
+        "target_path": "public/images/products/papeleria-escolar/tablas-de-multiplicar-primary.webp",
+        "notes": "Set de llaveros con tarjetas didÃ¡cticas del 1 al 12 (3.6 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_9557.HEIC",
+        "size_kb": 3606.1,
+        "target_webp": "tablas-de-multiplicar-secondary-1.webp",
+        "target_path": "public/images/products/papeleria-escolar/tablas-de-multiplicar-secondary-1.webp",
+        "notes": "Despliegue en abanico con anilla metÃ¡lica (3.6 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_9558.HEIC",
+        "size_kb": 3452.5,
+        "target_webp": "tablas-de-multiplicar-secondary-2.webp",
+        "target_path": "public/images/products/papeleria-escolar/tablas-de-multiplicar-secondary-2.webp",
+        "notes": "Detalle tipogrÃ¡fico claro con colores por tabla (3.5 MB)"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "collection_name": "Tarjetas Imantadas Publicitarias",
+    "folder_name": "Tarjetas inmantadas personalizadas",
+    "slug": "tarjetas-imantadas-personalizadas",
+    "category": "corporativo-emprendedores",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_3521.HEIC",
+        "size_kb": 2621.6,
+        "target_webp": "tarjetas-imantadas-personalizadas-primary.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/tarjetas-imantadas-personalizadas-primary.webp",
+        "notes": "Tarjetas publicitarias imantadas para refrigerador (2.6 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_3520.HEIC",
+        "size_kb": 2564.9,
+        "target_webp": "tarjetas-imantadas-personalizadas-secondary-1.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/tarjetas-imantadas-personalizadas-secondary-1.webp",
+        "notes": "Muestra de lote con impresión brillante (2.6 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_3522.HEIC",
+        "size_kb": 2337.6,
+        "target_webp": "tarjetas-imantadas-personalizadas-secondary-2.webp",
+        "target_path": "public/images/products/corporativo-emprendedores/tarjetas-imantadas-personalizadas-secondary-2.webp",
+        "notes": "Ãngulo mostrando adherencia magnÃ©tica (2.3 MB)"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "collection_name": "Cake Toppers y Adornos para Tortas",
+    "folder_name": "Toppers de Tortas",
+    "slug": "toppers-de-tortas",
+    "category": "fiestas-eventos",
+    "images_count": 3,
+    "images": [
+      {
+        "role": "primary",
+        "original_file": "IMG_3379.HEIC",
+        "size_kb": 3288.6,
+        "target_webp": "toppers-de-tortas-primary.webp",
+        "target_path": "public/images/products/fiestas-eventos/toppers-de-tortas-primary.webp",
+        "notes": "Topper multicapa con cartulinas glitter, foil y nombre 3D (3.3 MB)"
+      },
+      {
+        "role": "secondary_1",
+        "original_file": "IMG_3382.HEIC",
+        "size_kb": 2596.1,
+        "target_webp": "toppers-de-tortas-secondary-1.webp",
+        "target_path": "public/images/products/fiestas-eventos/toppers-de-tortas-secondary-1.webp",
+        "notes": "Detalle de soporte transparente e inserciÃ³n en torta (2.6 MB)"
+      },
+      {
+        "role": "secondary_2",
+        "original_file": "IMG_3383.HEIC",
+        "size_kb": 2553.2,
+        "target_webp": "toppers-de-tortas-secondary-2.webp",
+        "target_path": "public/images/products/fiestas-eventos/toppers-de-tortas-secondary-2.webp",
+        "notes": "Variedad de motivos infantiles y aniversarios (2.6 MB)"
+      }
+    ]
+  }
+]

@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, ClipboardList } from "lucide-react";
+import { useQuote } from "@/lib/context/QuoteContext";
 
 export function Navbar() {
+  const { totalItems, openDrawer } = useQuote();
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
@@ -63,17 +65,36 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Right WhatsApp Button */}
-        <Button
-          variant="default"
-          className="bg-[#e04b88] hover:bg-[#c93d75] text-white rounded-full px-6 py-5 gap-2 shadow-sm font-semibold"
-          asChild
-        >
-          <a href="https://wa.me/56912345678" target="_blank" rel="noopener noreferrer">
-            <Phone className="h-4 w-4 fill-current" />
-            <span>Cotizar por WhatsApp</span>
-          </a>
-        </Button>
+        {/* Right Actions: Quote list & WhatsApp Button */}
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={openDrawer}
+            className="relative flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-secondary hover:bg-rose-100/70 text-plum font-bold text-xs sm:text-sm transition-all border border-purple-100 cursor-pointer shadow-2xs"
+            aria-label={`Ver lista de cotización (${totalItems} artículos)`}
+          >
+            <div className="relative">
+              <ClipboardList className="h-4 w-4 text-primary" />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2.5 w-4 h-4 rounded-full bg-primary text-white text-[10px] font-black flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </div>
+            <span className="hidden sm:inline">Mi Cotización</span>
+          </button>
+
+          <Button
+            variant="default"
+            className="bg-[#e04b88] hover:bg-[#c93d75] text-white rounded-full px-4 py-2 sm:px-6 sm:py-5 gap-2 shadow-sm font-semibold text-xs sm:text-sm"
+            asChild
+          >
+            <a href="https://wa.me/56912345678" target="_blank" rel="noopener noreferrer">
+              <Phone className="h-4 w-4 fill-current hidden sm:inline" />
+              <span>WhatsApp</span>
+            </a>
+          </Button>
+        </div>
       </div>
     </nav>
   );

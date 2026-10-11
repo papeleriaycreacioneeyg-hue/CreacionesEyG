@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { QuoteProvider } from "@/lib/context/QuoteContext";
+import { QuoteDrawer } from "@/components/catalog/QuoteDrawer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,7 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${playfair.variable} ${poppins.variable} antialiased`}>{children}</body>
+      <body className={`${playfair.variable} ${poppins.variable} antialiased`}>
+        <QuoteProvider>
+          {children}
+          <QuoteDrawer />
+        </QuoteProvider>
+      </body>
     </html>
   );
 }
