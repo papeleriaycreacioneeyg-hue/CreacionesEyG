@@ -4,11 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { LogoutButton } from "@/components/auth/LogoutButton";
-import { LayoutDashboard, ShoppingBag, FolderHeart, ShieldCheck } from "lucide-react";
+import { LayoutDashboard, ShoppingBag, FolderHeart, ShieldCheck, Images } from "lucide-react";
 
 const navItems = [
-  { href: "/mi-cuenta", label: "Mi Cuenta", icon: LayoutDashboard },
-  { href: "/admin", label: "Gestión de Fotos", icon: ShieldCheck },
+  { href: "/mi-cuenta", label: "Inicio Panel", icon: LayoutDashboard },
+  { href: "/mi-cuenta/catalogo", label: "Catálogo y Fotos", icon: Images },
+  { href: "/admin", label: "Panel Admin", icon: ShieldCheck },
   { href: "/mi-cuenta/pedidos", label: "Mis Pedidos", icon: ShoppingBag },
   { href: "/mi-cuenta/disenos", label: "Mi Bóveda", icon: FolderHeart },
 ];
