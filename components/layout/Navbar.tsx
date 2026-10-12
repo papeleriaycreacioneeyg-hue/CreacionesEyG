@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Phone, ClipboardList } from "lucide-react";
+import { Phone, ClipboardList, LayoutDashboard } from "lucide-react";
 import { useQuote } from "@/lib/context/QuoteContext";
 import { buildWhatsAppUrl } from "@/lib/constants/contact";
 
@@ -66,8 +66,19 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Right Actions: Quote list & WhatsApp Button */}
-        <div className="flex items-center gap-3">
+        {/* Right Actions: Admin, Quote list & WhatsApp Button */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Button
+            variant="outline"
+            className="rounded-full border-purple-200 text-plum hover:bg-purple-50 font-semibold text-xs sm:text-sm px-3.5 py-2 sm:px-4 sm:py-2.5 gap-1.5 shadow-2xs"
+            asChild
+          >
+            <Link href="/mi-cuenta">
+              <LayoutDashboard className="h-4 w-4 text-primary" />
+              <span>Administración</span>
+            </Link>
+          </Button>
+
           <button
             type="button"
             onClick={openDrawer}
