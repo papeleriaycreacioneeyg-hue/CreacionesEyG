@@ -44,7 +44,7 @@ export function Navbar() {
             href="/productos"
             className="text-sm font-semibold text-muted-foreground hover:text-primary transition-colors"
           >
-            Productos
+            Catálogo
           </Link>
           <Link
             href="/servicios"
