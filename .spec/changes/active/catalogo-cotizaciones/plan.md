@@ -247,8 +247,101 @@ El proyecto no avanzará entre etapas sin las siguientes autorizaciones explíci
 
 ---
 
-## 7. Datos Pendientes que Debe Proporcionar el Propietario
+---
 
-1. **WhatsApp Empresarial:** Número de teléfono con código de país (ej. `569XXXXXXXX`).
-2. **Correo Electrónico del Taller:** Dirección donde recibir las notificaciones de cotización.
-3. **Proveedor de Correo Transaccional:** API Key de Resend (recomendado en Vercel) o credenciales SMTP del correo corporativo.
+## 7. Configuración Comercial Confirmada
+
+1. **WhatsApp Empresarial:** `+56948672300` (URL oficial: `https://wa.me/56948672300`).
+2. **Correo Electrónico Oficial del Taller:** `papeleriaycreacioneseyg@gmail.com`.
+3. **Proveedor de Correo Transaccional:** Resend o canal directo preparado en Server Action.
+
+---
+
+## 8. Arquitectura Técnica del Panel de Administración y Almacenamiento Persistente
+
+### 8.1. Modelo de Datos y Migración SQL (`collection_images`)
+```sql
+-- Tabla persistente para imágenes de las 26 colecciones
+CREATE TABLE IF NOT EXISTS public.collection_images (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    collection_id VARCHAR(50) NOT NULL, -- 'prod-1' .. 'prod-26'
+    collection_slug VARCHAR(150) NOT NULL,
+    storage_path TEXT NOT NULL,
+    public_url TEXT NOT NULL,
+    file_name VARCHAR(255) NOT NULL,
+    file_size_bytes INTEGER NOT NULL,
+    mime_type VARCHAR(50) NOT NULL,
+    position INTEGER DEFAULT 0 NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_collection_images_collection_id ON public.collection_images(collection_id);
+CREATE INDEX IF NOT EXISTS idx_collection_images_collection_slug ON public.collection_images(collection_slug);
+
+-- RLS
+ALTER TABLE public.collection_images ENABLE ROW LEVEL SECURITY;
+
+-- Lectura pública para el catálogo
+CREATE POLICY "Public read collection images"
+    ON public.collection_images FOR SELECT
+    USING (true);
+
+-- Escritura y borrado exclusivo para administradores
+CREATE POLICY "Admins manage collection images"
+    ON public.collection_images FOR ALL
+    USING (public.is_admin());
+
+-- Trigger para garantizar el límite estricto de máximo 10 imágenes por colección con prevención de concurrencia
+CREATE OR REPLACE FUNCTION public.check_collection_images_limit()
+RETURNS TRIGGER AS $$
+DECLARE
+    current_count INTEGER;
+BEGIN
+    -- Bloqueo consultivo por colección para evitar race condition en subidas simultáneas
+    PERFORM pg_advisory_xact_lock(hashtext(NEW.collection_id));
+    
+    SELECT COUNT(*) INTO current_count
+    FROM public.collection_images
+    WHERE collection_id = NEW.collection_id;
+    
+    IF current_count >= 10 THEN
+        RAISE EXCEPTION 'Límite alcanzado: Una colección no puede tener más de 10 fotografías (actual: %)', current_count
+            USING ERRCODE = 'P0001';
+    END IF;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trigger_check_collection_images_limit ON public.collection_images;
+CREATE TRIGGER trigger_check_collection_images_limit
+    BEFORE INSERT ON public.collection_images
+    FOR EACH ROW
+    EXECUTE FUNCTION public.check_collection_images_limit();
+```
+
+### 8.2. Configuración de Supabase Storage
+* **Bucket:** `catalog-images` (Público para lectura).
+* **Estructura de paths:** `collections/[collection_id]/[timestamp]_[uuid].[ext]`.
+* **Políticas de Storage:**
+  - `storage.objects` SELECT: `bucket_id = 'catalog-images'` (público).
+  - `storage.objects` INSERT/UPDATE/DELETE: `bucket_id = 'catalog-images' AND public.is_admin()` (solo admin).
+
+### 8.3. Pipeline de Validación en Servidor (`uploadCollectionImage`)
+1. **Verificación de Sesión y Rol:**
+   - Comprueba `supabase.auth.getUser()`.
+   - Consulta `public.is_admin()`. Si no es admin, retorna error HTTP 403 Forbidden.
+2. **Validación de Parámetros:**
+   - `collection_id`: Debe pertenecer a las 26 colecciones válidas (`prod-1` a `prod-26`).
+3. **Validación Exhaustiva de Archivo:**
+   - Tamaño máximo: 5 MB (5,242,880 bytes).
+   - Formatos permitidos: JPG (`image/jpeg`), PNG (`image/png`), WebP (`image/webp`).
+   - Magic Bytes Check: Se analizan los primeros 12 bytes del buffer en Node.js para confirmar que la firma binaria corresponde a JPEG (`FF D8 FF`), PNG (`89 50 4E 47`), o WebP (`RIFF....WEBP`). Se rechazan absolutamente SVG, ejecutables y archivos con extensiones falsificadas.
+4. **Carga en Storage y Transacción BD:**
+   - Subida a Supabase Storage con `cacheControl: '3600'`, `upsert: false`.
+   - Inserción en `public.collection_images`.
+   - Si la inserción en BD falla por el trigger de 10 imágenes o error SQL, se elimina inmediatamente el archivo subido en Storage para no dejar archivos huérfanos.
+5. **Revalidación de Caché:**
+   - Ejecuta `revalidatePath('/productos')` y `revalidatePath('/admin')`.
+

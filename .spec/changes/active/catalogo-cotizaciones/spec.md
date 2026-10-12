@@ -135,3 +135,40 @@ El ciclo de desarrollo incorporará **tres controles humanos independientes y se
 * [ ] **AC-14 (Calidad de Código y Quality Gates):** `npm run typecheck` finaliza con 0 errores, `npm run lint` finaliza con 0 errores y advertencias, `npm run test` supera todos los tests y `npm run build` compila limpiamente.
 * [ ] **AC-15 (Manejo de Fallos en Registro o Despacho sin Duplicidad):** Si la base de datos falla, la interfaz informa el error y preserva la selección local para reintento. Si la solicitud se guarda con éxito en Supabase pero falla el despacho del correo al taller, la interfaz informa que el registro fue exitoso (Ref: SOL-XXXX) y habilita un botón de contingencia directa a WhatsApp que **reutiliza el mismo identificador SOL-XXXX sin generar una cotización duplicada**.
 * [ ] **AC-16 (Controles Humanos Cumplidos):** Se cuenta con evidencia documentada de las tres aprobaciones humanas independientes: manifiesto fotográfico, orden de implementación y orden de publicación.
+* [ ] **AC-17 (Panel de Administración Protegido):** La ruta `/admin` exige autenticación y rol de administrador (`public.is_admin()`). Cualquier usuario no autenticado o no administrador es redirigido a `/login` sin acceso al panel.
+* [ ] **AC-18 (Límite Estricto de 10 Imágenes por Colección):** La base de datos mediante trigger/función en PostgreSQL y validación de servidor rechaza cualquier intento de subir más de 10 fotos para una colección dada, incluso ante peticiones simultáneas concurrentes.
+* [ ] **AC-19 (Gestión Manual en Storage sin Tocar Originales):** La subida, sustitución y eliminación de fotos interactúa exclusivamente con el bucket de Supabase Storage (`catalog-images`) y la tabla `collection_images`. Los archivos locales de la máquina del usuario permanecen 100% intactos.
+* [ ] **AC-20 (Validación Exhaustiva de Archivos):** Solo se admiten archivos JPG, PNG y WebP con tamaño máximo de 5 MB. Se rechazan en el servidor SVG, ejecutables y archivos con extensiones engañosas analizando sus magic bytes.
+* [ ] **AC-21 (Catálogo Público con Fotos Reales y Fallback):** Las tarjetas y modales del catálogo exhiben las fotografías cargadas en el panel. Si una colección no tiene fotografías, muestra elegantemente la ilustración artesanal `ProductVisual`.
+* [ ] **AC-22 (Canales Comerciales Oficiales):** Todos los accesos de WhatsApp apuntan a `+56948672300` (`https://wa.me/56948672300`) con mensaje codificado, y el correo de cotización apunta a `papeleriaycreacioneseyg@gmail.com`.
+
+---
+
+## 6. Nueva Fase: Panel de Administración y Gestión de Fotografías del Catálogo
+
+### 6.1. Requisitos Funcionales Adicionales
+* **RF-10 (Panel de Control `/admin`):**
+  - Ruta protegida con verificación estricta de sesión de usuario y rol `admin`.
+  - Panel con estética de marca: crema (`#FDFAF6`), ciruela (`#4A154B`), rosa (`#E04B88`) y dorado (`#E5C386`), totalmente adaptable (móvil y escritorio).
+  - Selector interactivo de las 26 colecciones estables (`prod-1` a `prod-26`).
+  - Contador en tiempo real de fotografías activas (ej: "4 / 10 cupos utilizados").
+* **RF-11 (Carga Manual de Fotografías):**
+  - Subida voluntaria desde el dispositivo mediante selector de archivos o drag & drop.
+  - Vista previa obligatoria antes de confirmar la carga.
+  - Indicadores claros de progreso, mensajes de error descriptivos y toast de éxito.
+  - Generación de identificador único y ruta estructurada en storage: `collections/[collection_id]/[uuid].[ext]`.
+* **RF-12 (Sustitución y Eliminación Atómica):**
+  - Botón para eliminar fotografía con modal de confirmación obligatoria.
+  - La eliminación borra el archivo en Supabase Storage y el registro en la base de datos de manera atómica, impidiendo registros huérfanos.
+  - La sustitución reemplaza la fotografía preservando la consistencia si la operación falla a mitad de camino.
+* **RF-13 (Restricción de Concurrencia a Nivel de Base de Datos):**
+  - Trigger en PostgreSQL sobre la tabla `collection_images` que cuenta las fotos existentes para la colección mediante bloqueo de fila transaccional (`FOR UPDATE` o advisory lock).
+  - Si el recuento llega a 10, la transacción se aborta con error SQL `P0001: Límite de 10 imágenes por colección alcanzado`.
+* **RF-14 (Conexión Pública con Revalidación de Caché):**
+  - Las imágenes aprobadas y guardadas se leen desde la tabla `collection_images` y se integran en las tarjetas de `/productos` y en `ProductDetailModal`.
+  - Revalidación de ruta Next.js (`revalidatePath('/productos')`) tras cada carga o eliminación para reflejar los cambios de inmediato sin nuevo despliegue.
+  - Si una colección tiene 0 fotos, se utiliza la ilustración actual `ProductVisual` como alternativa garantizada.
+* **RF-15 (Estandarización de Canales Oficiales):**
+  - Configuración global de datos de contacto: WhatsApp `+56948672300` y Correo `papeleriaycreacioneseyg@gmail.com`.
+  - Eliminación de todo placeholder previo (`+56912345678`) en Navbar, Footer, Catálogo y Cotizador.
+

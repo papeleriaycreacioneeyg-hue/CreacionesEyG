@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Phone, ClipboardList } from "lucide-react";
 import { useQuote } from "@/lib/context/QuoteContext";
+import { buildWhatsAppUrl } from "@/lib/constants/contact";
 
 export function Navbar() {
   const { totalItems, openDrawer } = useQuote();
@@ -89,7 +90,13 @@ export function Navbar() {
             className="bg-[#e04b88] hover:bg-[#c93d75] text-white rounded-full px-4 py-2 sm:px-6 sm:py-5 gap-2 shadow-sm font-semibold text-xs sm:text-sm"
             asChild
           >
-            <a href="https://wa.me/56912345678" target="_blank" rel="noopener noreferrer">
+            <a
+              href={buildWhatsAppUrl(
+                "Hola Creaciones E&G, me gustaría consultar por sus productos..."
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Phone className="h-4 w-4 fill-current hidden sm:inline" />
               <span>WhatsApp</span>
             </a>

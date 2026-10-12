@@ -1,18 +1,26 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, Plus, Minus, Check, Sparkles, Tag, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { X, Plus, Minus, Check, Sparkles, Tag, ShieldCheck, Camera } from "lucide-react";
 import { CatalogProduct } from "@/lib/data/catalog";
 import { ProductVisual } from "./ProductVisual";
 import { useQuote } from "@/lib/context/QuoteContext";
+import { CollectionImageRecord } from "@/app/actions/admin-images";
 
 interface ProductDetailModalProps {
   product: CatalogProduct | null;
   isOpen: boolean;
   onClose: () => void;
+  images?: CollectionImageRecord[];
 }
 
-export function ProductDetailModal({ product, isOpen, onClose }: ProductDetailModalProps) {
+export function ProductDetailModal({
+  product,
+  isOpen,
+  onClose,
+  images = [],
+}: ProductDetailModalProps) {
   const { addItem } = useQuote();
   const [quantity, setQuantity] = useState(1);
   const [notes, setNotes] = useState("");
@@ -84,18 +92,62 @@ export function ProductDetailModal({ product, isOpen, onClose }: ProductDetailMo
           {/* Left Column: Visual / Gallery Preview (5 cols) */}
           <div className="md:col-span-5 p-6 bg-gradient-to-b from-rose-50/50 to-white flex flex-col justify-between border-b md:border-b-0 md:border-r border-rose-100">
             <div className="space-y-4">
-              {/* Main Visual */}
-              <ProductVisual
-                icon={product.icon}
-                name={product.name}
-                categoryName={product.categoryName}
-                themeColor={product.themeColor}
-                accentColor={product.accentColor}
-                aspectRatio="square"
-              />
+              {/* Main Visual: Real photo if available, fallback to ProductVisual */}
+              {images.length > 0 ? (
+                <div className="relative aspect-square w-full rounded-2xl overflow-hidden border border-rose-200/80 shadow-xs bg-rose-50/30">
+                  <Image
+                    src={images[activeImageIndex]?.public_url || images[0].public_url}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 350px"
+                  />
+                  <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/90 text-plum shadow-2xs border border-rose-100 flex items-center gap-1">
+                    <Camera className="w-3 h-3 text-primary" />
+                    <span>Foto Real #{activeImageIndex + 1}</span>
+                  </span>
+                </div>
+              ) : (
+                <ProductVisual
+                  icon={product.icon}
+                  name={product.name}
+                  categoryName={product.categoryName}
+                  themeColor={product.themeColor}
+                  accentColor={product.accentColor}
+                  aspectRatio="square"
+                />
+              )}
 
-              {/* Gallery Thumbnails */}
-              {product.galleryImages.length > 0 && (
+              {/* Gallery Thumbnails: If uploaded images exist, switch between them */}
+              {images.length > 1 ? (
+                <div className="space-y-2 pt-1">
+                  <span className="text-[11px] font-bold text-plum/70 uppercase tracking-wider">
+                    Galería de fotografías ({images.length})
+                  </span>
+                  <div className="grid grid-cols-4 gap-2">
+                    {images.map((img, idx) => (
+                      <button
+                        key={img.id}
+                        type="button"
+                        onClick={() => setActiveImageIndex(idx)}
+                        className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
+                          activeImageIndex === idx
+                            ? "border-primary shadow-xs ring-2 ring-primary/20 scale-105"
+                            : "border-rose-100 opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <Image
+                          src={img.public_url}
+                          alt={img.file_name}
+                          fill
+                          className="object-cover"
+                          sizes="60px"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : product.galleryImages.length > 0 && images.length === 0 ? (
                 <div className="space-y-2 pt-2">
                   <span className="text-[11px] font-bold text-plum/70 uppercase tracking-wider">
                     Vistas y detalles del producto
@@ -118,7 +170,7 @@ export function ProductDetailModal({ product, isOpen, onClose }: ProductDetailMo
                     ))}
                   </div>
                 </div>
-              )}
+              ) : null}
             </div>
 
             {/* Quality Stamp */}

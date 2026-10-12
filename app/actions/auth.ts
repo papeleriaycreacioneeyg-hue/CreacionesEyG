@@ -31,8 +31,11 @@ export async function login(formData: FormData) {
     });
   }
 
+  const rawRedirect = formData.get("redirectTo") as string | null;
+  const safeRedirect = rawRedirect && rawRedirect.startsWith("/") ? rawRedirect : "/mi-cuenta";
+
   revalidatePath("/", "layout");
-  redirect("/mi-cuenta");
+  redirect(safeRedirect);
 }
 
 export async function signup(formData: FormData) {

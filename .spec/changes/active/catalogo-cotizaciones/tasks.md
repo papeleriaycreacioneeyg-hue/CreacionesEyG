@@ -59,11 +59,34 @@
   - *Verificación:* Apertura correcta del chat con mensaje prellenado, registro en base de datos y mensaje explicativo visible en la interfaz indicando la acción requerida.
 
 ### Fase 6: Pruebas Automatizadas y Quality Gates Locales
-- [ ] **Tarea 6.1:** Ejecutar `npm run typecheck` (verificar 0 errores de TypeScript en toda la base de código).
-- [ ] **Tarea 6.2:** Ejecutar `npm run lint` (verificar 0 errores y 0 advertencias de ESLint).
-- [ ] **Tarea 6.3:** Ejecutar `npm run test` (verificar que el 100% de los tests unitarios existentes y nuevos pasen exitosamente).
-- [ ] **Tarea 6.4:** Ejecutar `npm run build` (confirmar compilación limpia de producción en Next.js).
-- [ ] **Tarea 6.5:** Inspeccionar `git diff` asegurando que no se incluyan archivos `.env`, secretos, credenciales ni modificaciones ajenas al alcance.
+- [x] **Tarea 6.1:** Ejecutar `npm run typecheck` (verificar 0 errores de TypeScript en toda la base de código).
+- [x] **Tarea 6.2:** Ejecutar `npm run lint` (verificar 0 errores y 0 advertencias de ESLint).
+- [x] **Tarea 6.3:** Ejecutar `npm run test` (verificar que el 100% de los tests unitarios existentes y nuevos pasen exitosamente).
+- [x] **Tarea 6.4:** Ejecutar `npm run build` (confirmar compilación limpia de producción en Next.js).
+- [x] **Tarea 6.5:** Inspeccionar `git diff` asegurando que no se incluyan archivos `.env`, secretos, credenciales ni modificaciones ajenas al alcance.
+
+---
+
+### Fase 8: Panel de Administración y Fotografías Reales del Catálogo
+- [x] **Tarea 8.1:** Crear migración SQL `supabase/migrations/20261012000100_collection_images_and_storage.sql` con la tabla `collection_images`, políticas RLS para lectura pública y gestión exclusiva de admin, y función trigger `check_collection_images_limit` con `pg_advisory_xact_lock` para imponer el tope de 10 imágenes.
+- [x] **Tarea 8.2:** Crear módulo de validación de archivos en servidor `lib/validations/imageUpload.ts` con verificación de tipos MIME, magic bytes (JPEG, PNG, WebP) y descarte estricto de SVG o ejecutables.
+- [x] **Tarea 8.3:** Implementar Server Actions administrativos en `app/actions/admin-images.ts` (`uploadCollectionImageAction`, `deleteCollectionImageAction`, `getCollectionImagesAction`) con directiva `"server-only"` y verificación de `public.is_admin()`.
+- [x] **Tarea 8.4:** Implementar la interfaz protegida del panel `/admin` (`app/admin/page.tsx` y componentes en `components/admin/`) con:
+  - Selector de las 26 colecciones estables (`prod-1` a `prod-26`).
+  - Contador de cupos en tiempo real (utilizados vs disponibles de 10).
+  - Carga manual de fotografías desde dispositivo con vista previa previa a confirmar.
+  - Indicadores de progreso, mensajes claros de error y alertas de éxito.
+  - Eliminación con modal de confirmación obligatoria.
+  - Bloqueo visual y de servidor si se alcanzan las 10 fotografías.
+  - Diseño fiel a la paleta oficial (crema, ciruela, rosa, dorado) y totalmente responsive.
+- [x] **Tarea 8.5:** Integrar la visualización de imágenes reales en `/productos` y `ProductDetailModal.tsx`:
+  - Si una colección tiene fotografías en `collection_images`, se muestran en la galería y tarjeta.
+  - Si una colección tiene 0 fotografías, se muestra la ilustración artesanal existente `ProductVisual` como fallback.
+- [x] **Tarea 8.6:** Configurar canales comerciales oficiales:
+  - WhatsApp: `+56948672300` (`https://wa.me/56948672300`) con codificación estructurada en catálogo y cotizador.
+  - Correo: `papeleriaycreacioneseyg@gmail.com`.
+  - Reemplazo exhaustivo de enlaces placeholder en Navbar, Footer y Catálogo.
+- [x] **Tarea 8.7:** Escribir tests unitarios exhaustivos para validación de imágenes (`imageUpload.test.ts`), límites de colección y control de acceso.
 
 ---
 
@@ -73,5 +96,6 @@
 - [ ] **Tarea 7.2:** Crear commit estructurado siguiendo Conventional Commits (`feat(catalog): implement digital catalog and quote system`).
 - [ ] **Tarea 7.3:** Sincronizar cambios a la rama `main` en GitHub utilizando Git Portable con `wincred`.
 - [ ] **Tarea 7.4:** Verificar que el despliegue automático en Vercel finalice con estado `Ready` / `Success`.
-- [ ] **Tarea 7.5:** Validar en vivo en `https://creaciones-ey-g-lx4k.vercel.app/productos` el cumplimiento de los criterios de aceptación AC-01 a AC-14 con evidencias reales.
+- [ ] **Tarea 7.5:** Validar en vivo en `https://creaciones-ey-g-lx4k.vercel.app/productos` el cumplimiento de los criterios de aceptación AC-01 a AC-22 con evidencias reales.
 - [ ] **Tarea 7.6:** Mover la especificación de `.spec/changes/active/catalogo-cotizaciones/` a `.spec/changes/archive/`.
+

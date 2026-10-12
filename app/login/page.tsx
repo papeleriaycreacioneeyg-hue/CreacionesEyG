@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { LoginForm } from "@/components/auth/LoginForm";
@@ -10,7 +11,15 @@ export default function LoginPage() {
 
       <main className="flex-1 flex items-center justify-center py-16 bg-muted/20">
         <div className="w-full space-y-4">
-          <LoginForm />
+          <Suspense
+            fallback={
+              <div className="text-center py-8 text-sm text-muted-foreground">
+                Cargando formulario...
+              </div>
+            }
+          >
+            <LoginForm />
+          </Suspense>
           <p className="text-center text-sm text-muted-foreground">
             ¿No tienes una cuenta?{" "}
             <Link href="/registro" className="text-rose-500 hover:underline">

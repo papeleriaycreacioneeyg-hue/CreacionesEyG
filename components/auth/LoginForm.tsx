@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { login } from "@/app/actions/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +15,8 @@ import {
 } from "@/components/ui/card";
 
 export function LoginForm() {
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirectTo") || "/mi-cuenta";
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -38,6 +41,7 @@ export function LoginForm() {
         <CardDescription>Ingresa tu correo y contraseña para acceder.</CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit}>
+        <input type="hidden" name="redirectTo" value={redirectTo} />
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium">

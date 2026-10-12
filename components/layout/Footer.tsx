@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, Mail } from "lucide-react";
+import { OFFICIAL_CONTACT, buildWhatsAppUrl, buildMailtoUrl } from "@/lib/constants/contact";
 
 export function Footer() {
   return (
@@ -84,21 +85,35 @@ export function Footer() {
         <div className="flex flex-col space-y-3">
           <span className="text-sm font-bold text-plum">Contáctanos</span>
           <div className="flex flex-col space-y-2 text-xs text-muted-foreground">
-            <div className="flex items-center space-x-2">
+            <a
+              href={buildWhatsAppUrl(
+                "Hola Creaciones E&G, me gustaría consultar por sus productos..."
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-primary transition-colors"
+            >
               <Phone className="h-4.5 w-4.5 text-rose-500 fill-current" />
-              <span>+56 9 1234 5678</span>
-            </div>
+              <span>{OFFICIAL_CONTACT.phoneFormatted}</span>
+            </a>
+            <a
+              href={buildMailtoUrl("Consulta general desde el sitio web")}
+              className="flex items-center space-x-2 hover:text-primary transition-colors"
+            >
+              <Mail className="h-4.5 w-4.5 text-rose-500" />
+              <span>{OFFICIAL_CONTACT.email}</span>
+            </a>
             <div className="flex items-center space-x-2">
               <InstagramIcon className="h-4.5 w-4.5 text-rose-500" />
-              <span>@papeleriaycreacioneseyg</span>
+              <span>{OFFICIAL_CONTACT.instagram}</span>
             </div>
             <div className="flex items-center space-x-2">
               <TikTokIcon className="h-4.5 w-4.5 text-rose-500 fill-current" />
-              <span>@papeleriaycreacioneseyg</span>
+              <span>{OFFICIAL_CONTACT.tiktok}</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4.5 w-4.5 text-rose-500" />
-              <span>Santiago, Chile</span>
+              <span>{OFFICIAL_CONTACT.location}</span>
             </div>
           </div>
         </div>

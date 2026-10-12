@@ -325,7 +325,7 @@ export function QuoteForm() {
                   setPhone(e.target.value);
                   if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
                 }}
-                placeholder="+56 9 1234 5678"
+                placeholder="+56 9 4867 2300"
                 className={`w-full px-4 py-2.5 rounded-xl border text-sm text-foreground placeholder:text-muted-foreground outline-none transition-all ${
                   errors.phone
                     ? "border-destructive bg-destructive/5 ring-1 ring-destructive/20"

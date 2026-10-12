@@ -1,19 +1,25 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Plus, Check, Eye } from "lucide-react";
 import { CatalogProduct } from "@/lib/data/catalog";
 import { ProductVisual } from "./ProductVisual";
 import { useQuote } from "@/lib/context/QuoteContext";
+import { CollectionImageRecord } from "@/app/actions/admin-images";
 
 interface ProductCardProps {
   product: CatalogProduct;
   onOpenDetails: (product: CatalogProduct) => void;
+  images?: CollectionImageRecord[];
 }
 
-export function ProductCard({ product, onOpenDetails }: ProductCardProps) {
+export function ProductCard({ product, onOpenDetails, images }: ProductCardProps) {
   const { addItem } = useQuote();
   const [justAdded, setJustAdded] = useState(false);
+
+  const hasPhotos = images && images.length > 0;
+  const primaryPhoto = hasPhotos ? images[0] : null;
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -38,14 +44,31 @@ export function ProductCard({ product, onOpenDetails }: ProductCardProps) {
     >
       {/* Top Visual Area */}
       <div className="relative">
-        <ProductVisual
-          icon={product.icon}
-          name={product.name}
-          categoryName={product.categoryName}
-          themeColor={product.themeColor}
-          accentColor={product.accentColor}
-          aspectRatio="landscape"
-        />
+        {primaryPhoto ? (
+          <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-rose-100/70 bg-rose-50/30">
+            <Image
+              src={primaryPhoto.public_url}
+              alt={product.name}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            {images && images.length > 1 && (
+              <span className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/60 text-white backdrop-blur-xs">
+                +{images.length - 1} fotos
+              </span>
+            )}
+          </div>
+        ) : (
+          <ProductVisual
+            icon={product.icon}
+            name={product.name}
+            categoryName={product.categoryName}
+            themeColor={product.themeColor}
+            accentColor={product.accentColor}
+            aspectRatio="landscape"
+          />
+        )}
 
         {/* Badge Pill */}
         {product.badge && (

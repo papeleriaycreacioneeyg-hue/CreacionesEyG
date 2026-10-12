@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CatalogHeader } from "@/components/catalog/CatalogHeader";
@@ -10,6 +10,8 @@ import { ProductDetailModal } from "@/components/catalog/ProductDetailModal";
 import { FloatingQuoteButton } from "@/components/catalog/FloatingQuoteButton";
 import { CATALOG_PRODUCTS, CatalogProduct } from "@/lib/data/catalog";
 import { Sparkles, Heart, SearchX } from "lucide-react";
+import { getAllPublicCollectionImages, CollectionImageRecord } from "@/app/actions/admin-images";
+import { buildWhatsAppUrl } from "@/lib/constants/contact";
 
 export default function ProductosPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -18,6 +20,15 @@ export default function ProductosPage() {
     null
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imagesGrouped, setImagesGrouped] = useState<Record<string, CollectionImageRecord[]>>({});
+
+  useEffect(() => {
+    getAllPublicCollectionImages().then((data) => {
+      if (data) {
+        setImagesGrouped(data);
+      }
+    });
+  }, []);
 
   // Filter products by category and search query
   const filteredProducts = useMemo(() => {
@@ -110,7 +121,12 @@ export default function ProductosPage() {
             /* Grid of Cards */
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} onOpenDetails={handleOpenDetails} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onOpenDetails={handleOpenDetails}
+                  images={imagesGrouped[product.id]}
+                />
               ))}
             </div>
           )}
@@ -130,7 +146,9 @@ export default function ProductosPage() {
           </p>
           <div className="pt-2">
             <a
-              href="https://wa.me/56912345678?text=Hola%20Creaciones%20E%26G,%20tengo%20una%20idea%20especial%20y%20me%20gustar%C3%ADa%20consultar..."
+              href={buildWhatsAppUrl(
+                "Hola Creaciones E&G, tengo una idea especial y me gustaría consultar..."
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white bg-[#e04b88] hover:bg-[#c93d75] shadow-sm transition-all"
@@ -151,6 +169,7 @@ export default function ProductosPage() {
         product={selectedProductForModal}
         isOpen={isModalOpen}
         onClose={handleCloseModal}
+        images={selectedProductForModal ? imagesGrouped[selectedProductForModal.id] : []}
       />
     </div>
   );
