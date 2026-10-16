@@ -1,208 +1,145 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, Star, Gift } from "lucide-react";
+import { Heart, Star, Gift, MessageCircle, ShoppingBag } from "lucide-react";
+import { buildWhatsAppUrl } from "@/lib/constants/contact";
 
 export function HeroSection() {
-  const shouldReduceMotion = useReducedMotion();
-
-  // Animation variants
-  const textVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
-  };
-
-  const bannerVariants = {
-    hidden: { opacity: 0, x: 30, scale: 0.98 },
-    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 1, ease: "easeOut" as const } },
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: 0.3, ease: "easeOut" as const },
-    },
-  };
-
-  const trustRowVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.5,
-      },
-    },
-  };
-
-  const trustItemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
-  };
-
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-rose-50/80 via-purple-50/50 to-background min-h-[550px] flex items-center">
-      {/* Decorative Layer 1 & 2: Pastel watercolors & sparkles */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-10 left-10 w-96 h-96 bg-rose-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-purple-200/20 rounded-full blur-3xl" />
+    <section className="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-24 bg-gradient-to-b from-[#fdf7fa] via-[#fbf2f8] to-background min-h-[580px] flex items-center">
+      {/* Soft Ambient Floating Watercolor Blobs & Sparkles */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-12 left-10 w-96 h-96 bg-rose-200/25 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-purple-200/25 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-amber-100/30 rounded-full blur-2xl" />
 
-        {/* Ambient floating hearts & stars (cycle long animations) */}
-        {!shouldReduceMotion && (
-          <>
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-              className="absolute top-1/4 left-[8%] text-rose-300"
-            >
-              <Heart className="h-6 w-6 fill-current opacity-40" />
-            </motion.div>
-            <motion.div
-              animate={{ opacity: [0.3, 0.8, 0.3] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="absolute top-12 right-[20%] text-amber-300"
-            >
-              <Star className="h-5 w-5 fill-current opacity-60" />
-            </motion.div>
-            <motion.div
-              animate={{ y: [0, -4, 0] }}
-              transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
-              className="absolute bottom-1/4 left-[35%] text-purple-300"
-            >
-              <Heart className="h-5 w-5 fill-current opacity-30" />
-            </motion.div>
-          </>
-        )}
+        {/* Ambient floating hearts */}
+        <div className="absolute top-16 left-[12%] text-rose-300/40">
+          <Heart className="h-7 w-7 fill-current" />
+        </div>
+        <div className="absolute bottom-20 left-[28%] text-purple-300/30">
+          <Heart className="h-6 w-6 fill-current" />
+        </div>
+        <div className="absolute top-24 right-[15%] text-amber-300/50">
+          <Star className="h-5 w-5 fill-current" />
+        </div>
       </div>
 
-      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        {/* Left Column (50% on desktop) */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={textVariants}
-          className="lg:col-span-6 space-y-8 text-left"
-        >
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-plum leading-tight">
-              Papelería y<span className="block text-plum">Creaciones E&G</span>
+      <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+        {/* Left Column: Typography, Actions & Trust Badges (col-span-6) */}
+        <div className="lg:col-span-6 space-y-7 text-left">
+          {/* Main Hero Title */}
+          <div className="space-y-3">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-serif tracking-tight leading-[1.15]">
+              <span className="block text-[#e04b88]">Papelería y</span>
+              <span className="block text-[#4a154b]">Creaciones E&G</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
-              Creamos detalles únicos para momentos especiales.
+            <p className="text-base sm:text-lg text-muted-foreground font-medium leading-relaxed max-w-lg">
+              Creamos detalles únicos para momentos especiales
             </p>
           </div>
 
-          {/* Action Buttons */}
-          <motion.div variants={buttonVariants} className="flex flex-wrap gap-4">
+          {/* Action Buttons: Cotizar ahora & Ver catálogo */}
+          <div className="flex flex-wrap items-center gap-3.5 pt-1">
             <Button
               asChild
               size="lg"
-              className="bg-[#e04b88] hover:bg-[#c93d75] text-white rounded-full px-8 shadow-sm font-bold transition-transform hover:scale-[1.03]"
+              className="bg-[#e04b88] hover:bg-[#c93d75] text-white rounded-full px-7 py-6 shadow-sm font-bold text-sm tracking-wide transition-all hover:scale-[1.02] gap-2"
             >
-              <Link href="/cotizar">Cotizar ahora</Link>
+              <a
+                href={buildWhatsAppUrl(
+                  "¡Hola Creaciones E&G! Quiero cotizar un pedido especial para un momento único..."
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="w-4 h-4 fill-current" />
+                <span>Cotizar ahora</span>
+              </a>
             </Button>
+
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full border-rose-200 hover:bg-rose-50 text-plum font-bold gap-2 transition-all"
+              className="rounded-full border-rose-200/90 bg-white hover:bg-rose-50 text-plum font-bold text-sm px-6 py-6 shadow-2xs gap-2 transition-all hover:scale-[1.02]"
               asChild
             >
               <Link href="/productos">
                 <span>Ver catálogo</span>
-                <ShoppingCartIcon className="h-4 w-4" />
+                <ShoppingBag className="w-4 h-4 text-primary" />
               </Link>
             </Button>
-          </motion.div>
+          </div>
 
-          {/* Trust Badges */}
-          <motion.div
-            variants={trustRowVariants}
-            className="grid grid-cols-3 gap-4 pt-8 border-t border-rose-100"
-          >
-            <motion.div
-              variants={trustItemVariants}
-              className="flex flex-col items-start space-y-1"
-            >
-              <div className="h-8 w-8 rounded-full bg-rose-100 flex items-center justify-center text-rose-500">
-                <Heart className="h-4 w-4 fill-current" />
+          {/* Trust Micro-Badges Row */}
+          <div className="grid grid-cols-3 gap-3 pt-6 border-t border-rose-100/80 max-w-xl">
+            {/* Badge 1: Hecho con amor */}
+            <div className="flex items-center gap-2.5">
+              <div className="h-10 w-10 rounded-full bg-rose-50 border border-rose-200/80 flex items-center justify-center text-primary shrink-0 shadow-2xs">
+                <Heart className="h-4.5 w-4.5 fill-rose-500/20 text-primary" />
               </div>
-              <span className="text-xs font-bold text-plum">Hecho con amor</span>
-              <span className="text-[10px] text-muted-foreground">Cada detalle importa</span>
-            </motion.div>
-
-            <motion.div
-              variants={trustItemVariants}
-              className="flex flex-col items-start space-y-1"
-            >
-              <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-500">
-                <Star className="h-4 w-4 fill-current" />
+              <div className="flex flex-col">
+                <span className="text-xs font-extrabold text-plum leading-tight">
+                  Hecho con amor
+                </span>
+                <span className="text-[10px] text-muted-foreground leading-tight mt-0.5">
+                  Cada detalle importa
+                </span>
               </div>
-              <span className="text-xs font-bold text-plum">Personalizados</span>
-              <span className="text-[10px] text-muted-foreground">Ideas hechas para ti</span>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={trustItemVariants}
-              className="flex flex-col items-start space-y-1"
-            >
-              <div className="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-500">
-                <Gift className="h-4 w-4" />
+            {/* Badge 2: Personalizados */}
+            <div className="flex items-center gap-2.5">
+              <div className="h-10 w-10 rounded-full bg-purple-50 border border-purple-200/80 flex items-center justify-center text-[#9c7ac2] shrink-0 shadow-2xs">
+                <Star className="h-4.5 w-4.5 fill-purple-400/20 text-[#9c7ac2]" />
               </div>
-              <span className="text-xs font-bold text-plum">Calidad premium</span>
-              <span className="text-[10px] text-muted-foreground">Materiales de calidad</span>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+              <div className="flex flex-col">
+                <span className="text-xs font-extrabold text-plum leading-tight">
+                  Personalizados
+                </span>
+                <span className="text-[10px] text-muted-foreground leading-tight mt-0.5">
+                  Ideas hechas para ti
+                </span>
+              </div>
+            </div>
 
-        {/* Right Column (50% on desktop) - Integrated Banner beside main title */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={bannerVariants}
-          className="lg:col-span-6 relative flex justify-center items-center w-full"
-        >
-          {/* Subtle ambient pastel glow behind the banner for organic blending */}
-          <div className="absolute -inset-3 bg-gradient-to-tr from-rose-200/50 via-purple-200/40 to-amber-100/40 rounded-3xl blur-2xl opacity-75 pointer-events-none" />
+            {/* Badge 3: Calidad premium */}
+            <div className="flex items-center gap-2.5">
+              <div className="h-10 w-10 rounded-full bg-amber-50 border border-amber-200/80 flex items-center justify-center text-[#d4a359] shrink-0 shadow-2xs">
+                <Gift className="h-4.5 w-4.5 text-[#d4a359]" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs font-extrabold text-plum leading-tight">
+                  Calidad premium
+                </span>
+                <span className="text-[10px] text-muted-foreground leading-tight mt-0.5">
+                  Materiales de calidad
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div className="relative w-full max-w-[550px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl shadow-rose-950/5 border border-rose-100/80 bg-background/80 backdrop-blur-xs transition-all duration-300 hover:shadow-2xl hover:shadow-purple-900/10">
+        {/* Right Column: Hero Banner Image (col-span-6) */}
+        <div className="lg:col-span-6 relative flex justify-center items-center w-full">
+          {/* Soft aura glow behind the desk illustration */}
+          <div className="absolute -inset-4 bg-gradient-to-tr from-rose-200/40 via-purple-200/30 to-amber-100/30 rounded-3xl blur-2xl opacity-80 pointer-events-none" />
+
+          <div className="relative w-full max-w-[560px] rounded-3xl overflow-hidden shadow-lg border border-rose-100/80 bg-white/60 backdrop-blur-xs transition-all duration-300 hover:shadow-xl">
             <Image
               src="/images/banner.png"
-              alt="Papelería y Creaciones E&G - Ideas que inspiran"
+              alt="Papelería y Creaciones E&G - Ideas que inspiran en el taller"
               width={553}
               height={372}
               priority
-              className="w-full h-auto object-cover block rounded-2xl md:rounded-3xl"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 550px"
+              className="w-full h-auto object-cover block rounded-3xl"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 560px"
             />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
-  );
-}
-
-function ShoppingCartIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-      <path d="M3 6h18" />
-      <path d="M16 10a4 4 0 0 1-8 0" />
-    </svg>
   );
 }
