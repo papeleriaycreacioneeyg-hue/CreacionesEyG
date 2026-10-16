@@ -26,6 +26,7 @@ export function ProductDetailModal({
   const [notes, setNotes] = useState("");
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   // Reset state when opening a new product
   useEffect(() => {
@@ -34,6 +35,7 @@ export function ProductDetailModal({
       setNotes("");
       setActiveImageIndex(0);
       setIsAdded(false);
+      setImageError(false);
     }
   }, [product]);
 
@@ -93,7 +95,7 @@ export function ProductDetailModal({
           <div className="md:col-span-5 p-6 bg-gradient-to-b from-rose-50/50 to-white flex flex-col justify-between border-b md:border-b-0 md:border-r border-rose-100">
             <div className="space-y-4">
               {/* Main Visual: Real photo if available, fallback to ProductVisual */}
-              {images.length > 0 ? (
+              {images.length > 0 && !imageError ? (
                 <div className="relative aspect-square w-full rounded-2xl overflow-hidden border border-rose-200/80 shadow-xs bg-rose-50/30">
                   <Image
                     src={images[activeImageIndex]?.public_url || images[0].public_url}
@@ -101,6 +103,7 @@ export function ProductDetailModal({
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 350px"
+                    onError={() => setImageError(true)}
                   />
                   <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/90 text-plum shadow-2xs border border-rose-100 flex items-center gap-1">
                     <Camera className="w-3 h-3 text-primary" />

@@ -17,8 +17,9 @@ interface ProductCardProps {
 export function ProductCard({ product, onOpenDetails, images }: ProductCardProps) {
   const { addItem } = useQuote();
   const [justAdded, setJustAdded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
-  const hasPhotos = images && images.length > 0;
+  const hasPhotos = images && images.length > 0 && !imageError;
   const primaryPhoto = hasPhotos ? images[0] : null;
 
   const handleQuickAdd = (e: React.MouseEvent) => {
@@ -52,6 +53,7 @@ export function ProductCard({ product, onOpenDetails, images }: ProductCardProps
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              onError={() => setImageError(true)}
             />
             {images && images.length > 1 && (
               <span className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/60 text-white backdrop-blur-xs">
