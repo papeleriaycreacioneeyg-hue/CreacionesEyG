@@ -6,6 +6,7 @@
 
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-poppins);
+  --font-rasley: var(--font-rasley);
 
   /* Precise Brand Colors */
   --primary-rose: #e04b88; /* Rose Pink */
@@ -20,6 +21,7 @@
 @theme inline {
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
+  --font-rasley: var(--font-rasley);
 
   --color-primary: #e04b88;
   --color-primary-foreground: #ffffff;
@@ -52,4 +54,8 @@ h5,
 h6 {
   font-family: var(--font-serif), serif;
   color: var(--deep-plum);
+}
+
+.font-rasley {
+  font-family: var(--font-rasley), serif;
 }

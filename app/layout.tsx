@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -11,6 +12,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const rasleyHeights = localFont({
+  src: "./fonts/RasleyHeights.otf",
+  variable: "--font-rasley",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +44,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${playfair.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${playfair.variable} ${poppins.variable} ${rasleyHeights.variable} antialiased`}
+      >
         <QuoteProvider>
           {children}
           <QuoteDrawer />
