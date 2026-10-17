@@ -26,11 +26,15 @@ export function HeroSection() {
       {/* Hero Content Container */}
       <div className="container mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-24 relative z-10">
         <div className="max-w-2xl space-y-7 text-left">
-          {/* Main Hero Title with Rasley Heights font */}
+          {/* Main Hero Title with Rasley Heights font and Cinzel Decorative for E&G */}
           <div className="space-y-3">
-            <h1 className="font-rasley text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.08]">
+            <h1 className="font-rasley text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.12]">
               <span className="block text-[#e04b88]">Papelería y</span>
-              <span className="block text-[#4a154b]">Creaciones E&G</span>
+              <br />
+              <br />
+              <span className="block text-[#4a154b]">
+                Creaciones <span className="font-cinzel">E&G</span>
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#605149] font-medium leading-relaxed max-w-lg">
               Creamos detalles únicos para momentos especiales

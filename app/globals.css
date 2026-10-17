@@ -7,6 +7,7 @@
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-poppins);
   --font-rasley: var(--font-rasley);
+  --font-cinzel: var(--font-cinzel);
 
   /* Precise Brand Colors */
   --primary-rose: #e04b88; /* Rose Pink */
@@ -22,6 +23,7 @@
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
   --font-rasley: var(--font-rasley);
+  --font-cinzel: var(--font-cinzel);
 
   --color-primary: #e04b88;
   --color-primary-foreground: #ffffff;
@@ -58,4 +60,8 @@ h6 {
 
 .font-rasley {
   font-family: var(--font-rasley), serif;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel), serif;
 }

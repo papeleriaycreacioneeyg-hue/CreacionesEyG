@@ -20,6 +20,12 @@ const rasleyHeights = localFont({
   display: "swap",
 });
 
+const cinzelDecorative = localFont({
+  src: "./fonts/CinzelDecorative-Regular.otf",
+  variable: "--font-cinzel",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Papelería y Creaciones E&G | Momentos Especiales",
   description:
@@ -45,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${playfair.variable} ${poppins.variable} ${rasleyHeights.variable} antialiased`}
+        className={`${playfair.variable} ${poppins.variable} ${rasleyHeights.variable} ${cinzelDecorative.variable} antialiased`}
       >
         <QuoteProvider>
           {children}
