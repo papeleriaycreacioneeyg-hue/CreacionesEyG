@@ -30,11 +30,8 @@ export function HeroSection() {
           <div className="space-y-3">
             <h1 className="font-rasley text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.12]">
               <span className="block text-[#e04b88]">Papelería y</span>
-              <br />
-              <br />
-              <span className="block text-[#4a154b]">
-                Creaciones <span className="font-cinzel">E&G</span>
-              </span>
+              <span className="block text-[#4a154b]">Creaciones</span>
+              <span className="block text-[#4a154b] font-cinzel">E&G</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-[#605149] font-medium leading-relaxed max-w-lg">
               Creamos detalles únicos para momentos especiales
